@@ -1,30 +1,26 @@
 import './App.css';
-import BookList from './BookList';
-import CategoryFilter from './CategoryFilter';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import WelcomeBand from './WelcomeBand';
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BookPage from './pages/BookPage';
+import AddToCartPage from './pages/AddToCartPage';
+import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]); // this is a list of categories that have been checked
   return (
     <>
-      <div className="container mt-4">
-        <div className="row bg-primary text-white">
-          <WelcomeBand />
-        </div>
-        <div className="row">
-          <div className="col-md-3">
-            <CategoryFilter
-              selectedCategories={selectedCategories}
-              setSelectedCategories={setSelectedCategories}
+      <CartProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<BookPage />} />
+            <Route
+              path="/addToCart/:title/:price/:bookId"
+              element={<AddToCartPage />}
             />
-          </div>
-          <div className="col-md-9">
-            <BookList selectedCategories={selectedCategories} />
-          </div>
-        </div>
-      </div>
+            <Route path="/books" element={<BookPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </>
   );
 }
