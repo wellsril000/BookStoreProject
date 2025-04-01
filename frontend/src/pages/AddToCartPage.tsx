@@ -8,12 +8,12 @@ function AddToCartPage() {
   const navigate = useNavigate();
   const { title, price, bookId } = useParams();
   const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState<number>();
+  const [quantity, setQuantity] = useState<number>(1);
 
   const handleAddToCart = () => {
     const newItem: CartItem = {
       bookId: Number(bookId),
-      bookTitle: bookTitle || 'No Book Found',
+      bookTitle: title || 'No Book Found',
       quantity,
       price: Number(price),
     };
@@ -25,6 +25,7 @@ function AddToCartPage() {
     <>
       <WelcomeBand />
       <h2>{title}</h2>
+      <h3>Price: ${price}</h3>
       <div>
         <input
           type="number"
@@ -32,7 +33,7 @@ function AddToCartPage() {
           value={quantity}
           onChange={(x) => setQuantity(Number(x.target.value))}
         />
-        <button onClick={() => navigate('/cart')}>Add to Cart</button>
+        <button onClick={() => handleAddToCart()}>Add to Cart</button>
       </div>
 
       <button onClick={() => navigate(-1)}>Go Back</button>
