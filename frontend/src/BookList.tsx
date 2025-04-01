@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Book } from './types/Book';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]);
   const [pageSize, setPageSize] = useState<number>(10); // pageSize holds the current page size, setPageSize -> A function that updates pageSize
   const [pageNum, setPageNum] = useState<number>(1);
@@ -11,8 +11,11 @@ function BookList() {
 
   useEffect(() => {
     const fetchBooks = async () => {
+      const categoryParams = selectedCategories
+        .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
+        .join('&');
       const response = await fetch(
-        `https://localhost:5000/Book/GetAllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}`,
+        `https://localhost:5000/Book/GetAllBooks?pageSize=${pageSize}&pageNum=${pageNum}&sortOrder=${sortOrder}${selectedCategories.length ? `&${categoryParams}` : ''}`,
         {
           credentials: 'include',
         }
@@ -24,15 +27,13 @@ function BookList() {
     };
 
     fetchBooks();
-  }, [pageSize, pageNum, totalItems, sortOrder]);
+  }, [pageSize, pageNum, totalItems, sortOrder, selectedCategories]);
 
   return (
     <>
       <div className="book-list">
-        <h1>Book List</h1>
-
         <label className="form-label">
-          <h2>Sort Books: </h2>
+          <h3>Sort Books: </h3>
           <select
             className="form-select"
             value={sortOrder}
