@@ -6,7 +6,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function CartPage() {
   const navigate = useNavigate();
   const { cart, removeFromCart } = useCart();
-  const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+  //   const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+  const totalAmount = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  //   const subtotal = cart.reduce()
 
   return (
     <div>
@@ -29,7 +34,9 @@ function CartPage() {
                         ></i>
                         <span className="fs-4"> {item.bookTitle} </span>
                         <br />
-                        <span>Subtotal: ${item.price.toFixed(2)}</span>
+                        <span>
+                          Subtotal: ${(item.price * item.quantity).toFixed(2)}
+                        </span>
                         <span style={{ marginLeft: '8px' }}>
                           Qty: {item.quantity}
                         </span>

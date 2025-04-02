@@ -30,9 +30,9 @@ namespace BookProject.API.Controllers
             var books = _bookDbContext.Books.AsQueryable();
             
             // Apply sorting
-            books = sortOrder.ToLower() == "asc"
-                ? books.OrderBy(x => x.Title)
-                : books.OrderByDescending(x => x.Title);
+            query = sortOrder.ToLower() == "asc"
+                ? query.OrderBy(x => x.Title)
+                : query.OrderByDescending(x => x.Title);
 
             var paginatedBooks = query
                 .Skip((pageNum - 1) * pageSize)
