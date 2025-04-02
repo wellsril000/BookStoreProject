@@ -33,10 +33,14 @@ function AddToCartPage() {
           value={quantity}
           onChange={(x) => setQuantity(Number(x.target.value))}
         />
-        <button onClick={() => handleAddToCart()}>Add to Cart</button>
+        <button className="btn btn-primary" onClick={() => handleAddToCart()}>
+          Add to Cart
+        </button>
       </div>
 
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <button className="btn btn-secondary mt-2" onClick={() => navigate(-1)}>
+        Go Back
+      </button>
     </>
   );
 }
