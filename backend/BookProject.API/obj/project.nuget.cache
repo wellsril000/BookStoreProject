@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/CQw8Hen6gapKQo7WzFpMKT4vYwjewDd5TcPraYz/h9bntKJyOktgoaLI0lhi0eJL/7Ja4TDhYfR3QFZTjbV+A==",
+  "dgSpecHash": "Cg35XgAXsOJ09CFEW+Tk8P+LOeahPTlJAUHKnaQOa1W2w6wQBvyCP9bLWc8aCqOiE2ROrAhSkjf0oiDWpX/LJw==",
   "success": true,
-  "projectFilePath": "/Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/BookProject.API.csproj",
+  "projectFilePath": "/Users/rileywells/Documents/IS_413/IS_413_React/BookStoreProject/backend/BookProject.API/BookProject.API.csproj",
   "expectedPackageFiles": [
     "/Users/rileywells/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/rileywells/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

@@ -6885,11 +6885,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/BookProject.API.csproj",
+      "projectUniqueName": "/Users/rileywells/Documents/IS_413/IS_413_React/BookStoreProject/backend/BookProject.API/BookProject.API.csproj",
       "projectName": "BookProject.API",
-      "projectPath": "/Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/BookProject.API.csproj",
+      "projectPath": "/Users/rileywells/Documents/IS_413/IS_413_React/BookStoreProject/backend/BookProject.API/BookProject.API.csproj",
       "packagesPath": "/Users/rileywells/.nuget/packages/",
-      "outputPath": "/Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/obj/",
+      "outputPath": "/Users/rileywells/Documents/IS_413/IS_413_React/BookStoreProject/backend/BookProject.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rileywells/.nuget/NuGet/NuGet.Config"
