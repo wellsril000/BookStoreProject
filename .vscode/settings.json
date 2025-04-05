@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/4f5dc39d-b816-4d71-99fa-c50dab89a4fa/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/BookStoreProject-RileyWells-Backend",
+  "appService.deploySubpath": "backend/BookProject.API/publish"
+}
