@@ -258,3 +258,4 @@
 /Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
 /Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
 /Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/obj/Debug/net8.0/BookProject.API.sourcelink.json
+/Users/rileywells/Documents/IS_413/IS_413_React/BookProject/backend/BookProject.API/bin/Debug/net8.0/Bookstore.sqlite
