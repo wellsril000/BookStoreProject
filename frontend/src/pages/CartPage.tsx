@@ -1,4 +1,4 @@
-import { Links, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/CartItem';
 import 'bootstrap-icons/font/bootstrap-icons.css';

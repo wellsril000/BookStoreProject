@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Book } from '../types/Book';
 import { deleteBook, fetchBooks } from '../api/projectsAPI';
 import Pagination from '../components/pagination';
-import newBookForm from '../components/newBookForm';
 import NewBookForm from '../components/newBookForm';
 import EditBookForm from '../components/editBookForm';
 
