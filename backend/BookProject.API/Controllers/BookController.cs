@@ -59,5 +59,52 @@ namespace BookProject.API.Controllers
 
             return Ok(bookCategories);
         }
+
+        [HttpPost("AddBook")]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            _bookDbContext.Books.Add(newBook);
+            _bookDbContext.SaveChanges();
+
+            return Ok(newBook);
+        }
+
+        [HttpPut("updateBook/{bookId}")] // NOT SURE IF THIS WILL CAUSE AN ERROR WITH THE ID
+        public IActionResult UpdateBook(int bookId, [FromBody] Book updatedBook)
+        {
+            var existingBook = _bookDbContext.Books.Find(bookId);
+
+            existingBook.Title = updatedBook.Title;
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher = updatedBook.Publisher;
+            existingBook.ISBN = updatedBook.ISBN;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+            existingBook.Price = updatedBook.Price;
+
+            _bookDbContext.Books.Update(existingBook);
+            _bookDbContext.SaveChanges();
+
+            return Ok(existingBook);
+        }
+        [HttpDelete("deleteBook/{bookId}")]
+
+        public IActionResult DeleteBook(int bookId)
+        {
+            var book = _bookDbContext.Books.Find(bookId);
+
+            if (book == null)
+            {
+                return NotFound(new {message = "Book not Found"});
+            }
+
+            _bookDbContext.Books.Remove(book);
+            _bookDbContext.SaveChanges();
+
+            return NoContent();
+        }
+
+
     }
 }
