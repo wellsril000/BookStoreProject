@@ -8,7 +8,7 @@ interface FetchBooksResponse {
   totalNumBooks: number;
 }
 
-const API_URL =
+export const API_URL =
   'https://bookstoreproject-rileywells-backend-dmdehzd6epekftgp.eastus-01.azurewebsites.net/Book';
 
 const sortOrder = 'asc'; // or 'desc', depending on how your backend handles it
